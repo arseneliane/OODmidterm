@@ -1,62 +1,84 @@
-# Tic-Tac-Toe Game
+# Tic-Tac-Toe (Java)
 
 ## Introduction
-This is a **text-based Tic-Tac-Toe game** implemented in Java using Object-Oriented Programming (OOP) principles. The game allows a player to compete against another human or an AI-controlled computer.
+This is a **text-based Tic-Tac-Toe** game developed in Java using Object-Oriented Programming (OOP) principles. Players can compete against each other or challenge an AI opponent with different difficulty levels.
 
-## Features
-- **Two-player mode**: Play against another human.
-- **AI opponent**: The computer uses the **Minimax algorithm** for optimal moves.
-- **Formatted Grid Display**: The board is displayed with labeled positions (e.g., `A1`, `B2`, etc.).
-- **Turn-based system**: Players take turns automatically.
-- **Game result detection**: Identifies winners or a tie.
-
-## UML Design
-The game follows a structured OOP design with the following classes:
-
-### 1. Game
-- Manages the game flow and players.
-- Holds the **Grid**, **Turn**, and **Result** objects.
-- Handles player selection and game execution.
-
-### 2. Player (Abstract Class)
-- Represents a generic player with `name` and `sign` (`X` or `O`).
-- Has a method `doTurn(Grid grid)`, which is implemented differently by `Human` and `Computer`.
-
-### 3. Human (Extends Player)
-- Allows a human to input their move.
-
-### 4. Computer (Extends Player)
-- Uses `findBestMove()` and `minimax()` to make optimal moves.
-
-### 5. Grid
-- Stores the game board (`char[3][3]`).
-- Checks for **valid moves, winners, and a full board**.
-
-### 6. Turn
-- Tracks whose turn it is using `playerOneTurn: boolean`.
-- Method `playOneTurn()` controls a single turn.
-
-### 7. Result
-- Stores and retrieves the game’s outcome.
+## Game Modes
+- **Human vs. Human**: Two players take turns.
+- **Human vs. Computer**:
+  - **Easy Mode**: The computer selects moves randomly.
+  - **Hard Mode**: The AI uses the **Minimax algorithm** to make optimal moves.
 
 ## How to Play
-1. **Run the program**.
-2. **Choose your opponent** (Human or Computer).
-3. **Take turns placing X or O** by entering positions (e.g., `A1`, `B2`).
-4. The game will display the updated board after each move.
-5. The game ends when a player wins or there is a tie.
+1. Run the program by executing the `Main` class.
+2. Enter Player 1's name and choose a sign (**X or O**).
+3. Select an opponent (**Human or Computer**).
+4. If playing against the computer, choose difficulty (**Easy or Hard**).
+5. Input moves using grid labels (**A1, B2, C3**, etc.).
+6. The game continues until a player wins or the board is full (draw).
+7. Choose to **play again** or exit.
 
-## Installation & Execution
-1. Clone or download the project.
-2. Open the project in **Eclipse** (or any Java IDE).
-3. Compile and run the `Main` class:
+## Example Output
+```
+Welcome to Tic-Tac-Toe!
+Enter Player 1's name: Alice
+Choose your sign (X/O): X
+Choose opponent: (1) Human  (2) Computer
+Enter choice: 2
+Choose difficulty: (1) Easy  (2) Hard
+Enter choice: 2
 
-## Future Improvements
-- Implement a GUI for better interaction.
-- Add a scoreboard feature.
-- Allow users to set custom board sizes.
-- Allow users to play against each other online. 
-## Author
-Developed by Arsen Eliane as part of an **OOP midterm** in Java.
+   A   B   C
+1  _ | _ | _
+2  _ | _ | _
+3    |   |  
 
+Alice's turn (X). Enter your move: A1
+
+   A   B   C
+1  X | _ | _
+2  _ | _ | _
+3    |   |  
+
+Computer's turn (O)...
+
+   A   B   C
+1  X | _ | _
+2  _ | O | _
+3    |   |  
+
+Alice's turn (X). Enter your move:
+```
+
+## Features
+- **Formatted Grid Display** with labeled positions for clarity.
+- **Turn-Based Play** with automatic player switching.
+- **Winner & Draw Detection** with real-time updates.
+- **AI Opponent** that adjusts based on difficulty.
+- **Replay Option** to restart after a match.
+
+## File Structure
+- `Main.java` → Launches the game.
+- `Game.java` → Manages game flow and interactions.
+- `Grid.java` → Handles board updates and validation.
+- `Player.java` → Base class for player-related logic.
+- `Human.java` → Handles human player input.
+- `Computer.java` → Implements AI behavior for Easy & Hard modes.
+- `Turn.java` → Controls turn switching.
+- `Result.java` → Determines and stores game outcomes.
+
+## Notes
+- Designed without exception handling (as preferred).
+- Hard mode AI is **unbeatable** using Minimax.
+- Easy mode AI provides a relaxed gameplay experience.
+
+## Future Enhancements
+- Implementing a **Graphical User Interface (GUI)**.
+- Expanding AI strategies for more variety.
+- Introducing additional difficulty levels.
+
+## Creator
+Developed by Arsen Eliane.
+
+Enjoy playing Tic-Tac-Toe!
 
