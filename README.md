@@ -74,8 +74,9 @@ Alice's turn (X). Enter your move:
 
 ## Future Enhancements
 - Implementing a **Graphical User Interface (GUI)**.
-- Expanding AI strategies for more variety.
-- Introducing additional difficulty levels.
+- Add a scoreboard feature.
+- Allow users to set custom board sizes.
+- Allow users to play against each other online. 
 
 ## Creator
 Developed by Arsen Eliane.
